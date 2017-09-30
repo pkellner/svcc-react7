@@ -1,0 +1,27 @@
+﻿
+<h1>test.cshtml page with environemnt tags</h1>
+
+<br />
+<environment names="Staging,Production">
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+</environment>
+<br />
+<environment names="Development">
+    <strong>HostingEnvironment.EnvironmentName is Development</strong>
+</environment>
+<br/>
+<environment names="Production">
+    <strong>HostingEnvironment.EnvironmentName is Production</strong>
+</environment>
+
+<hr />
+No Parameters
+<img src="/resize/Images/pict.jpg" />
+<hr/>
+Size 400
+<img src="/resize/Images/pict.jpg?maxwidth=400" />
+<hr />
+Original
+<img src="~/Images/pict.jpg" />
+<hr />
+

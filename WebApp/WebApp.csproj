@@ -18,4 +18,11 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\banner1.svg" />
+    <None Include="wwwroot\Images\banner2.svg" />
+    <None Include="wwwroot\Images\banner3.svg" />
+    <None Include="wwwroot\Images\banner4.svg" />
+  </ItemGroup>
+
 </Project>

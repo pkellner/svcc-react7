@@ -37,6 +37,11 @@ namespace WebApp
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddNodeServices(options => {
+                options.LaunchWithDebugging = true;
+                options.DebuggingPort = 9229;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

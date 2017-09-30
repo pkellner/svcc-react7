@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
+using Microsoft.AspNetCore.NodeServices;
 
 namespace WebApp.Controllers
 {
@@ -15,12 +16,12 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
+        //public IActionResult About()
+        //{
+        //    ViewData["Message"] = "Your application description page.";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         public IActionResult Contact()
         {
@@ -32,6 +33,18 @@ namespace WebApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> About([FromServices] INodeServices nodeServices)
+        {
+
+            ViewData["ResultFromNode"] = await nodeServices.InvokeAsync<string>("NodeSrc/myNodeModule.js");
+            return View(viewName: "About");
+        }
+
+        public IActionResult ImageResize()
+        {
+            return View();
         }
     }
 }
